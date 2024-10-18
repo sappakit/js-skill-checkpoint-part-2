@@ -7,3 +7,13 @@ const students = [
 ];
 
 // เริ่มเขียนโค้ดตรงนี้
+const totalScore = (students) => {
+  let scoreMoreThan50 = students
+    .filter((student) => student.score > 50)
+    .map((student) => student.score * 1.1)
+    .reduce((acc, cur) => acc + cur, 0);
+
+  return `Total score is ${scoreMoreThan50}`;
+};
+
+console.log(totalScore(students));
